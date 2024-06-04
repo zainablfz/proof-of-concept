@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "MedievalSharp";
+  src: url("../../assets/fonts/MedievalSharp-Regular.ttf");
+}
+
+body {
+  background-image: url("../../assets/images/background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
