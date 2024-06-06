@@ -1,0 +1,25 @@
+<%- include('./partials/head') %>
+
+  <body>
+
+  <h1> Merlin's Book of Potions</h1>
+  <a href="/"> Start Brewing</a>
+
+  <img src="../../assets/images/cauldron.png" class="cauldron" alt="cauldron" width="400" height="400">
+
+<section class="ingredients-container">
+ <% ingredients.forEach(ingredient => { %>
+        <fieldset>
+          <input name="ingredients" type="checkbox" value="<%= ingredient.id %>" id="<%= ingredient.id %>">
+          <label for="<%= ingredient.id %>">
+            <img src="<%- ingredient.asset %>" alt="<%= ingredient.name %>" width="100" height="100">
+          </label>
+
+          <article class="ingredient-card">
+            <!-- <h2><%= ingredient.name %></h2> -->
+          </article>
+        </fieldset> 
+      <% }) %>  
+      </section>
+
+</html>
