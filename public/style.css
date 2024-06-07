@@ -39,6 +39,10 @@ main {
   width: fit-content;
 }
 
+.intro {
+  margin: auto;
+}
+
 .intro-content {
   height: 100%;
   margin: auto;
@@ -55,6 +59,7 @@ h1 {
   color: var(--text-color);
   margin: 0.5em;
 }
+
 a {
   padding: 1rem 1.7rem;
   background-image: linear-gradient(135deg, #8806d8, #ff8a19, #ed663c, #8806d8);
@@ -82,10 +87,6 @@ a {
   margin: 1rem;
 }
 
-.intro {
-  margin: auto;
-}
-
 .cauldron {
   padding: 2.5em;
   display: block;
@@ -93,12 +94,27 @@ a {
   margin-right: auto;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+  width: 99vw;
+  overflow-x: auto;
+}
+
+fieldset {
+  border: none;
+  border-radius: 10%;
+  backdrop-filter: blur(50px);
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+}
+
 .ingredients-container {
   display: flex;
   overflow-x: auto;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  /* margin-top: auto; */
 }
 
 .ingredient {
