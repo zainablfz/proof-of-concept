@@ -8,32 +8,15 @@
   <img src="../../assets/images/cauldron.png" class="cauldron" alt="cauldron" width="400" height="400">
   <button type="submit" class="button" form="ingredient-list">Start brewing</button>
 
-<!-- <section class="ingredients-container">
- <% ingredients.forEach(ingredient => { %>
-        <fieldset>
-          <input name="ingredients" type="checkbox" value="<%= ingredient.id %>" id="<%= ingredient.id %>">
-          <label for="<%= ingredient.id %>">
-            <img src="<%- ingredient.asset %>" alt="<%= ingredient.name %>" width="100" height="100">
-          </label>
-
-          <article class="ingredient-card">
-          </article>
-        </fieldset> 
-      <% }) %>  
-      </section> -->
           <form method="post" action="/brew" id="ingredient-list">
       <% ingredients.forEach(ingredient => { %>
-        <div class="container-ingredient">
+        <div class="ingredients-container">
           <fieldset>
             <input name="ingredients" type="checkbox" value="<%= ingredient.id %>" id="<%= ingredient.id %>">
             <label for="<%= ingredient.id %>">
-              <img src="<%= ingredient.asset %>" alt="<%= ingredient.name %>" width="100" height="100">
+              <img src="<%= ingredient.asset %>" alt="<%= ingredient.name %>" width="80" height="80">
             </label>
-            <!-- <p class="ingredient-hover"><%= ingredient.name %></p> -->
           </fieldset> 
-  
-          <article class="ingredient-card" id="ingredient<%= ingredient.id %>">
-          </article>
         </div>
       <% }) %> 
     </form>
