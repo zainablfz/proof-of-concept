@@ -36,25 +36,7 @@ app.get('/brew', (request, response) => {
   })
 })
 
-app.get('/potions', (request, response) => {
-  Promise.all([
-    fetchJson(`${potionsUrl}`),
-    fetchJson(`${ingredientsUrl}`)
-  ]).then(([potions, ingredients]) => {
-
-  response.render('potions', {potions, ingredients });
-  })
-})
-
-app.get('/potion/:id', (request, response) =>{
-  fetchJson(`${potionsUrl}/${request.params.id}`).then((potion) =>{
-    response.render('potion', {potion});
-  })
-})
-
-app.get('/nasty-potion', (request, response) =>{
-  response.render('nasty-potion')
-})
+// POST-route
 
 app.post('/brew', (request, response) => {
   fetchJson(`${potionsUrl}`).then((potions) => {
@@ -86,6 +68,26 @@ app.post('/brew', (request, response) => {
       response.redirect(301, '/nasty-potion')
     }
   })
+})
+
+app.get('/potions', (request, response) => {
+  Promise.all([
+    fetchJson(`${potionsUrl}`),
+    fetchJson(`${ingredientsUrl}`)
+  ]).then(([potions, ingredients]) => {
+
+  response.render('potions', {potions, ingredients });
+  })
+})
+
+app.get('/potion/:id', (request, response) =>{
+  fetchJson(`${potionsUrl}/${request.params.id}`).then((potion) =>{
+    response.render('potion', {potion});
+  })
+})
+
+app.get('/nasty-potion', (request, response) =>{
+  response.render('nasty-potion')
 })
 
 
