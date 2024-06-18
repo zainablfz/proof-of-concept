@@ -75,8 +75,7 @@ app.get('/potions', (request, response) => {
     fetchJson(`${potionsUrl}`),
     fetchJson(`${ingredientsUrl}`)
   ]).then(([potions, ingredients]) => {
-
-  response.render('potions', {potions, ingredients });
+    response.render('potions', {potions, ingredients });
   })
 })
 

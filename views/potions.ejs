@@ -1,1 +1,13 @@
 <%- include('./partials/head') %>
+<main class="cards">
+  <% potions.forEach(potion => { %>
+  <div class="wrap-cards">
+    <article class="potion-card">
+      <label for="potion<%= potion.id %>">
+        <h2><%= potion.name %></h2>
+        <img src="<%= potion.asset %>" alt="<%= potion.name %>" />
+      </label>
+    </article>
+  </div>
+  <% }) %>
+</main>

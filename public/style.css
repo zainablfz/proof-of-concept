@@ -242,13 +242,13 @@ fieldset {
   z-index: 1;
 }
 
-/* Toast UI */
+/* Toast Notification */
 
 .toast {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
-  background-color: #333;
+  background-color: #8806d8;
   color: #fff;
   text-align: center;
   border-radius: 5px;
@@ -282,4 +282,105 @@ fieldset {
     bottom: 0;
     opacity: 0;
   }
+}
+
+/* Card Potions */
+
+.cards {
+  display: flex;
+  width: 95vw;
+  overflow-x: auto;
+  position: relative;
+  /* margin-top: 4rem; */
+  margin: auto;
+}
+/*
+.potion-card {
+  width: 300px;
+  height: 500px;
+  flex: 0 0 auto; 
+  margin: 0.5rem;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.potion-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+& img {
+  width: 80%;
+} */
+
+.wrap-cards {
+  margin: 2rem;
+  transform-style: preserve-3d;
+  transform: perspective(100rem);
+  cursor: pointer;
+}
+
+.potion-card {
+  --rX: 0;
+  --rY: 0;
+  --bX: 50%;
+  --bY: 80%;
+
+  width: 30rem;
+  height: 36rem;
+  border: 1px solid var(--background-color);
+  border-radius: 1.6rem;
+  padding: 4rem;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+  background: linear-gradient(hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1));
+  background-position: var(--bX) var(--bY);
+  background-size: 40rem auto;
+  box-shadow: 0 0 3rem 0.5rem hsla(0, 0%, 0%, 0.2);
+
+  transition: transform 0.6s 1s;
+}
+
+.potion-card::before,
+.potion-card::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #fff;
+  position: absolute;
+  z-index: 2;
+  opacity: 0.3;
+  transition: 0.3s;
+}
+
+.potion-card::before {
+  top: 2rem;
+  right: 2rem;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+
+.potion-card::after {
+  bottom: 2rem;
+  left: 2rem;
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
+.potion-card--active {
+  transition: none;
+}
+
+.wrap-cards:hover .potion-card::before,
+.wrap-cards:hover .potion-card::after {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
 }
