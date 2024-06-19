@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('ingredient-list');
   const toast = document.getElementById('toast');
 
+// Toast Notification
+
   function showToast(message) {
     toast.textContent = message;
     toast.className = 'toast show';
@@ -17,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
       event.dataTransfer.setData('text/plain', container.id);
     });
   });
+
+// Drag & Drop event
 
   cauldron.addEventListener('drop', function(event) {
     event.preventDefault();
@@ -82,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Potion Cards Effect
 
 class ParallaxTiltEffect {
   constructor({ element, tiltEffect }) {
@@ -161,15 +167,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-
-
-// const wrap2 = new parallaxTiltEffect({
-//   element: $('.wrap--2'),
-//   tiltEffect: 'normal'
-// });
-
-// const wrap3 = new parallaxTiltEffect({
-//   element: $('.wrap--3'),
-//   tiltEffect: 'reverse'
-// });
